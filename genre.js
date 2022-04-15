@@ -11,62 +11,44 @@ async function getApi(url) {
     let obj = data.genres[i];
     console.log("Name: " + obj.name + " -- ID: " + obj.id);
 
-    // Row
+    // Genres row
     const row = document.createElement("div");
-    row.classList.add("row");
+    row.classList.add("row", "m-3");
 
-    // col-sm-6
-    const col6 = document.createElement("div");
-    col6.classList.add("col-sm-6");
+    // Genres col-4
+    const col4 = document.createElement("div");
+    col4.classList.add("col-sm-4");
 
-    // Card
+    // Genres Card
     const genresCard = document.createElement("div");
-    genresCard.classList.add("card", "text-white", "mb-3");
-    genresCard.setAttribute("style", "width: 10rem");
-    genresCard.setAttribute("style", "background-color: #5d5fb9");
+    genresCard.classList.add("card");
 
-    // Img
-    const genresCardImg = document.createElement("img");
-    genresCardImg.classList.add("card-img-top", "img-fluid");
-    /*
-    genresCardImg.src =
-      "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/onGdT8sYi89drvSJyEJnft97rOq.jpg";
-    
-    */
-    genresCardImg.id = "imgBulk";
+    // Genres Header
+    const genresHeader = document.createElement("div");
+    genresHeader.classList.add("card-header", "text-center");
+    genresHeader.innerHTML = `${obj.name}`;
 
     // Card Body
-    const genresCardBody = document.createElement("div");
-    genresCardBody.classList.add("card-body");
+    const genresBody = document.createElement("div");
+    genresBody.classList.add("card-body");
 
-    // Card Title
-    const genresCardTitle = document.createElement("h5");
-    genresCardTitle.classList.add("card-title");
-    genresCardTitle.innerHTML = `${obj.name}`;
+    // Blockquote
+    const genresBlockquote = document.createElement("blockquote");
+    genresBlockquote.classList.add("blockquote", "mb-0");
 
-    // Card Text
-    const genresCardText = document.createElement("p");
-    genresCardText.classList.add("card-text");
-    genresCardText.innerHTML = `ID: ${obj.id}`;
-
-    // Card Link
-    const genresCardLink = document.createElement("a");
-    genresCardLink.id = "card-link";
-    genresCardLink.classList.add("btn");
-    genresCardLink.href = "#";
-    genresCardLink.innerHTML = `Visit Genre`;
-    genresCardLink.setAttribute("style", "background-color: #5d5fb9");
+    // Card paragraph
+    const genresPara = document.createElement("p");
+    genresPara.classList.add("text-center");
+    genresPara.innerHTML = `ID: ${obj.id}`;
 
     // Append Child
-
+    row.appendChild(col4);
+    col4.appendChild(genresCard);
+    genresCard.appendChild(genresHeader);
+    genresCard.appendChild(genresBody);
+    genresBody.appendChild(genresBlockquote);
+    genresBlockquote.appendChild(genresPara);
     document.body.appendChild(row);
-    document.body.appendChild(col6);
-    document.body.appendChild(genresCard);
-    document.body.appendChild(genresCardImg);
-    document.body.appendChild(genresCardBody);
-    document.body.appendChild(genresCardTitle);
-    document.body.appendChild(genresCardText);
-    document.body.appendChild(genresCardLink);
   }
 }
 
