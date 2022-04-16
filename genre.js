@@ -28,6 +28,7 @@ async function getApi(url) {
     "./images/war.jpg",
     "./images/western.jpg",
   ];
+  let arrLink = ["./action/actionFind.html"];
   for (let i = 0; i < data.genres.length; i++) {
     let obj = data.genres[i];
     console.log("Name: " + obj.name + " -- ID: " + obj.id);
@@ -64,6 +65,11 @@ async function getApi(url) {
       genresPara.classList.add("text-center");
       genresPara.innerHTML = `ID: ${obj.id}`;
 
+      // Card Link
+      const genresLink = document.createElement("a");
+      genresLink.href = arrLink[i];
+      genresLink.innerHTML = "Search";
+
       // Card Image
       const genresImage = document.createElement("img");
       genresImage.src = arrImage[i];
@@ -79,6 +85,7 @@ async function getApi(url) {
       genresBody.appendChild(genresBlockquote);
       genresBlockquote.appendChild(genresPara);
       genresBlockquote.appendChild(genresImage);
+      genresBlockquote.appendChild(genresLink);
       document.body.appendChild(row);
     } else {
       // Genres row
@@ -112,6 +119,11 @@ async function getApi(url) {
       genresPara.classList.add("text-center");
       genresPara.innerHTML = `ID: ${obj.id}`;
 
+      // Card Link
+      const genresLink = document.createElement("a");
+      genresLink.href = arrLink[i];
+      genresLink.innerHTML = "Search";
+
       // Card Image
       const genresImage = document.createElement("img");
       genresImage.src = arrImage[i];
@@ -126,6 +138,7 @@ async function getApi(url) {
       genresBody.appendChild(genresBlockquote);
       genresBlockquote.appendChild(genresPara);
       genresBlockquote.appendChild(genresImage);
+      genresBlockquote.appendChild(genresLink);
       document.body.appendChild(col4);
     }
   }
