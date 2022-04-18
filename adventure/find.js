@@ -2,11 +2,11 @@ const key = config.API_KEY;
 const searchMovie =
   "https://api.themoviedb.org/3/search/movie?api_key=" +
   key +
-  "&language=en-US&query=Animation";
+  "&language=en-US&query=adventure";
 
-console.log("Hello from Animation");
+console.log("Hello from adventure");
 
-async function getanimation(url) {
+async function getadventure(url) {
   const response = await fetch(url);
   let data = await response.json();
   console.log(data.results);
@@ -21,16 +21,16 @@ async function getanimation(url) {
 
     // Fetch variables data
 
-    let animationid = obj.id;
-    let animationTitle = obj.original_title;
-    let animationPoster = obj.poster_path;
-    let animationReleaseDate = obj.release_date;
-    let animationVoteAvg = obj.vote_average;
+    let adventureid = obj.id;
+    let adventureTitle = obj.original_title;
+    let adventurePoster = obj.poster_path;
+    let adventureReleaseDate = obj.release_date;
+    let adventureVoteAvg = obj.vote_average;
     const pathImageUrl = "https://image.tmdb.org/t/p/original/";
-    let imgUrl = pathImageUrl + animationPoster;
+    let imgUrl = pathImageUrl + adventurePoster;
     let errorImg = "../images/placeholder.jpg";
 
-    if (animationPoster == null) {
+    if (adventurePoster == null) {
       imgUrl = errorImg;
     }
 
@@ -44,19 +44,19 @@ async function getanimation(url) {
     class="card-header text-center"
     style="background-color: rgb(93, 95, 185)"
   >
-    ${animationTitle}
+    ${adventureTitle}
   </div>
   <div class="card-body">
     <blockquote class="blockquote mb-0 text-center">
-      <p class="text-center">ID: ${animationid}</p>
+      <p class="text-center">ID: ${adventureid}</p>
       <img
         src="${imgUrl}" id="imgSource"
         class="img img-fluid rounded"
         style="width: auto; height: 250px"
       />
       <div class="text-center"><a href="#">Take a peak!</a></div>
-      <p class="text-center">Release Date: ${animationReleaseDate}</p>
-      <p class="text-center">Vote (Avg) : ${animationVoteAvg}</p>
+      <p class="text-center">Release Date: ${adventureReleaseDate}</p>
+      <p class="text-center">Vote (Avg) : ${adventureVoteAvg}</p>
     </blockquote>
   </div>
 </div>
@@ -65,4 +65,4 @@ async function getanimation(url) {
   }
 }
 
-getanimation(searchMovie);
+getadventure(searchMovie);
