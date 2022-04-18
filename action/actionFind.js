@@ -94,62 +94,6 @@ async function getAction(url) {
     actionBlockquote.appendChild(actionRating);
     document.body.appendChild(row);
   }
-
-  /* else {
-      // action row
-      const row = document.createElement("div");
-      row.classList.add("row", "m-3");
-
-      // action col-4
-      const col4 = document.createElement("div");
-      col4.classList.add("col-sm-4");
-
-      // action Card
-      const actionCard = document.createElement("div");
-      actionCard.classList.add("card");
-
-      // action Header
-      const actionHeader = document.createElement("div");
-      actionHeader.classList.add("card-header", "text-center");
-      actionHeader.innerHTML = `${actionTitle}`;
-      actionHeader.style.backgroundColor = "#5d5fb9";
-
-      // Card Body
-      const actionBody = document.createElement("div");
-      actionBody.classList.add("card-body");
-
-      // Blockquote
-      const actionBlockquote = document.createElement("blockquote");
-      actionBlockquote.classList.add("blockquote", "mb-0", "text-center");
-
-      // Card paragraph
-      const actionPara = document.createElement("p");
-      actionPara.classList.add("text-center");
-      actionPara.innerHTML = `ID: ${obj.id}`;
-
-      // Card Link
-      const actionLink = document.createElement("a");
-      actionLink.href = "#";
-      actionLink.innerHTML = "Take a peak!";
-
-      // Card Image
-      const actionImage = document.createElement("img");
-      actionImage.src = imgUrl;
-      actionImage.classList.add("img", "img-fluid", "rounded");
-      actionImage.style.width = "auto";
-      actionImage.style.height = "250px";
-
-      // Append Child
-      col4.appendChild(actionCard);
-      actionCard.appendChild(actionHeader);
-      actionCard.appendChild(actionBody);
-      actionBody.appendChild(actionBlockquote);
-      actionBlockquote.appendChild(actionPara);
-      actionBlockquote.appendChild(actionImage);
-      actionBlockquote.appendChild(actionLink);
-      document.body.appendChild(col4);
-    }
-    */
 }
 
 getAction(searchMovie);

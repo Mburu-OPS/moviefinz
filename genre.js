@@ -28,7 +28,11 @@ async function getApi(url) {
     "./images/war.jpg",
     "./images/western.jpg",
   ];
-  let arrLink = ["./action/actionFind.html"];
+  let arrLink = [
+    "./action/actionFind.html",
+    "./adventure/adventureFind.html",
+    "./animation/find.html",
+  ];
   for (let i = 0; i < data.genres.length; i++) {
     let obj = data.genres[i];
     console.log("Name: " + obj.name + " -- ID: " + obj.id);
