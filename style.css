@@ -5,12 +5,16 @@ body {
 small {
     font-size: 80%;
 }
-.col-sm-4:hover {
+.col-sm-4:hover, .col-sm-6:hover {
     transform: scale(105%);
 }
 #imgSource {
     width: auto;
     height: 27rem;
+}
+#imgHome {
+    width: 25rem;
+    height: auto;
 }
 .col-sm-4, .mb-3 {
     box-shadow: 5px 10px 18px #888888;
