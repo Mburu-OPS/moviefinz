@@ -23,7 +23,7 @@
     <header>
       <nav>
         <nav
-          class="navbar navbar-expand-lg navbar-dark"
+          class="navbar navbar-expand-lg navbar-dark fixed-top"
           style="background-color: #5d5fb9"
         >
           <div class="container-fluid">
@@ -56,11 +56,20 @@
                   <a class="nav-link" href="#">TV episode</a>
                 </li>
               </ul>
+              <form class="d-flex" action="./search.html">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Find your movie..."
+                  aria-label="Search"
+                />
+                <button class="btn btn-light" type="submit">Search</button>
+              </form>
             </div>
           </div>
         </nav>
       </nav>
-      <div class="h1 text-center">Movie Finder</div>
+      <div class="h1 text-center title">Movie Finder</div>
       <div class="text-center">
         <img
           src="./images/moviefinz.png"
@@ -70,10 +79,12 @@
         />
       </div>
     </header>
-    <main></main>
+    <main>
+      <h2 class="text-center">Genres</h2>
+    </main>
 
     <footer>
-      <div class="text-center mt-3" style="background-color: lightgray">
+      <div class="text-center mt-3 mb-2" style="background-color: lightgray">
         <p>
           Created with ❤️ and Enthuasiasm by
           <a href="https://github.com/mariosdaskalas" target="_blank"
@@ -100,6 +111,7 @@
     </footer>
     <script type="text/javascript" src="./config.js"></script>
     <script type="text/javascript" src="./genre.js"></script>
+    <script type="text/javascript" src="./search.js"></script>
     <script
       type="text/javascript"
       src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"

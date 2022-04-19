@@ -36,7 +36,7 @@ async function getadventure(url) {
 
     const main = document.querySelector("main");
     const movieElement = document.createElement("div");
-    movieElement.classList.add("col-sm-4");
+    movieElement.classList.add("col-sm-4", "mb-3");
 
     movieElement.innerHTML = `
 <div class="card">
@@ -52,7 +52,7 @@ async function getadventure(url) {
       <img
         src="${imgUrl}" id="imgSource"
         class="img img-fluid rounded"
-        style="width: auto; height: 250px"
+        
       />
       <div class="text-center"><a href="#">Take a peak!</a></div>
       <p class="text-center">Release Date: ${adventureReleaseDate}</p>

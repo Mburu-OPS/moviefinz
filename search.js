@@ -1,12 +1,17 @@
-const key = config.API_KEY;
+// Store value
+let searchElement = document.querySelectorAll(".form-control").value;
+
+const key1 = config1.API_KEY;
+console.log(`Value: ${searchElement}`);
 const searchMovie =
   "https://api.themoviedb.org/3/search/movie?api_key=" +
-  key +
-  "&language=en-US&query=action";
+  key1 +
+  "&language=en-US&query=" +
+  searchElement;
 
-console.log("Hello from action");
+async function getResults(url) {
+  console.log("Hello from results");
 
-async function getaction(url) {
   const response = await fetch(url);
   let data = await response.json();
   console.log(data.results);
@@ -21,16 +26,16 @@ async function getaction(url) {
 
     // Fetch variables data
 
-    let actionid = obj.id;
-    let actionTitle = obj.original_title;
-    let actionPoster = obj.poster_path;
-    let actionReleaseDate = obj.release_date;
-    let actionVoteAvg = obj.vote_average;
+    let resultsid = obj.id;
+    let resultsTitle = obj.original_title;
+    let resultsPoster = obj.poster_path;
+    let resultsReleaseDate = obj.release_date;
+    let resultsVoteAvg = obj.vote_average;
     const pathImageUrl = "https://image.tmdb.org/t/p/original/";
-    let imgUrl = pathImageUrl + actionPoster;
+    let imgUrl = pathImageUrl + resultsPoster;
     let errorImg = "../images/placeholder.jpg";
 
-    if (actionPoster == null) {
+    if (resultsPoster == null) {
       imgUrl = errorImg;
     }
 
@@ -44,19 +49,19 @@ async function getaction(url) {
     class="card-header text-center"
     style="background-color: rgb(93, 95, 185)"
   >
-    ${actionTitle}
+    ${resultsTitle}
   </div>
   <div class="card-body">
     <blockquote class="blockquote mb-0 text-center">
-      <p class="text-center">ID: ${actionid}</p>
+      <p class="text-center">ID: ${resultsid}</p>
       <img
         src="${imgUrl}" id="imgSource"
         class="img img-fluid rounded"
         
       />
       <div class="text-center"><a href="#">Take a peak!</a></div>
-      <p class="text-center">Release Date: ${actionReleaseDate}</p>
-      <p class="text-center">Vote (Avg) : ${actionVoteAvg}</p>
+      <p class="text-center">Release Date: ${resultsReleaseDate}</p>
+      <p class="text-center">Vote (Avg) : ${resultsVoteAvg}</p>
     </blockquote>
   </div>
 </div>
@@ -65,4 +70,4 @@ async function getaction(url) {
   }
 }
 
-getaction(searchMovie);
+getResults(searchMovie);

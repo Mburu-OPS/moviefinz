@@ -2,11 +2,11 @@ const key = config.API_KEY;
 const searchMovie =
   "https://api.themoviedb.org/3/search/movie?api_key=" +
   key +
-  "&language=en-US&query=action";
+  "&language=en-US&query=Science%20Fiction";
 
-console.log("Hello from action");
+console.log("Hello from fiction");
 
-async function getaction(url) {
+async function getfiction(url) {
   const response = await fetch(url);
   let data = await response.json();
   console.log(data.results);
@@ -21,16 +21,16 @@ async function getaction(url) {
 
     // Fetch variables data
 
-    let actionid = obj.id;
-    let actionTitle = obj.original_title;
-    let actionPoster = obj.poster_path;
-    let actionReleaseDate = obj.release_date;
-    let actionVoteAvg = obj.vote_average;
+    let fictionid = obj.id;
+    let fictionTitle = obj.original_title;
+    let fictionPoster = obj.poster_path;
+    let fictionReleaseDate = obj.release_date;
+    let fictionVoteAvg = obj.vote_average;
     const pathImageUrl = "https://image.tmdb.org/t/p/original/";
-    let imgUrl = pathImageUrl + actionPoster;
+    let imgUrl = pathImageUrl + fictionPoster;
     let errorImg = "../images/placeholder.jpg";
 
-    if (actionPoster == null) {
+    if (fictionPoster == null) {
       imgUrl = errorImg;
     }
 
@@ -44,19 +44,19 @@ async function getaction(url) {
     class="card-header text-center"
     style="background-color: rgb(93, 95, 185)"
   >
-    ${actionTitle}
+    ${fictionTitle}
   </div>
   <div class="card-body">
     <blockquote class="blockquote mb-0 text-center">
-      <p class="text-center">ID: ${actionid}</p>
+      <p class="text-center">ID: ${fictionid}</p>
       <img
         src="${imgUrl}" id="imgSource"
         class="img img-fluid rounded"
         
       />
       <div class="text-center"><a href="#">Take a peak!</a></div>
-      <p class="text-center">Release Date: ${actionReleaseDate}</p>
-      <p class="text-center">Vote (Avg) : ${actionVoteAvg}</p>
+      <p class="text-center">Release Date: ${fictionReleaseDate}</p>
+      <p class="text-center">Vote (Avg) : ${fictionVoteAvg}</p>
     </blockquote>
   </div>
 </div>
@@ -65,4 +65,4 @@ async function getaction(url) {
   }
 }
 
-getaction(searchMovie);
+getfiction(searchMovie);

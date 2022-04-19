@@ -32,6 +32,22 @@ async function getApi(url) {
     "./action/find.html",
     "./adventure/find.html",
     "./animation/find.html",
+    "./comedy/find.html",
+    "./crime/find.html",
+    "./documentary/find.html",
+    "./drama/find.html",
+    "./family/find.html",
+    "./fantasy/find.html",
+    "./history/find.html",
+    "./horror/find.html",
+    "./music/find.html",
+    "./mystery/find.html",
+    "./romance/find.html",
+    "./fiction/find.html",
+    "./tv/find.html",
+    "./thriller/find.html",
+    "./war/find.html",
+    "./western/find.html",
   ];
 
   const main = document.querySelector("main");
@@ -44,14 +60,14 @@ async function getApi(url) {
 
     // Fetch variables data
 
-    let genreid = obj.name;
-    let animationid = obj.id;
-    let animationTitle = obj.original_title;
-    let animationPoster = obj.poster_path;
-    let animationReleaseDate = obj.release_date;
-    let animationVoteAvg = obj.vote_average;
+    let genreName = obj.name;
+    let genreid = obj.id;
+    let genreTitle = obj.original_title;
+    let genrePoster = obj.poster_path;
+    let genreReleaseDate = obj.release_date;
+    let genreVoteAvg = obj.vote_average;
     const pathImageUrl = "https://image.tmdb.org/t/p/original/";
-    let imgUrl = pathImageUrl + animationPoster;
+    let imgUrl = pathImageUrl + genrePoster;
     let errorImg = "../images/placeholder.jpg";
 
     const main = document.querySelector("main");
@@ -64,11 +80,11 @@ async function getApi(url) {
     class="card-header text-center"
     style="background-color: rgb(93, 95, 185)"
   >
-    ${genreid}
+    ${genreName}
   </div>
   <div class="card-body">
     <blockquote class="blockquote mb-0 text-center">
-      <p class="text-center">ID: ${animationid}</p>
+      <p class="text-center">ID: ${genreid}</p>
       <img
         src="${arrImage[i]}"
         class="img img-fluid rounded"
