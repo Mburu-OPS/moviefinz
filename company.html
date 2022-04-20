@@ -7,17 +7,17 @@
     <title>Movie Finder - moviefinz</title>
     <link
       rel="stylesheet"
-      href="./node_modules/bootstrap/dist/css/bootstrap.css"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
       type="text/css"
     />
-    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <link rel="stylesheet" href="../style.css" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
   </head>
   <body>
     <header>
@@ -27,7 +27,7 @@
           style="background-color: #5d5fb9"
         >
           <div class="container-fluid">
-            <a class="navbar-brand" href="#"><u>Movie Finder</u></a>
+            <a class="navbar-brand" href="../index.html"><u>Movie Finder</u></a>
             <button
               class="navbar-toggler"
               type="button"
@@ -42,40 +42,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#"
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="../index.html"
                     >Genre</a
                   >
                 </li>
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarScrollingDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Movies
-                  </a>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="navbarScrollingDropdown"
-                  >
-                    <li>
-                      <a class="dropdown-item" href="./popular.html">Popular</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="./top.html">Top Rated</a>
-                    </li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li>
-                      <a class="dropdown-item" href="./upcoming.html"
-                        >Upcoming</a
-                      >
-                    </li>
-                  </ul>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Movies</a>
                 </li>
-
                 <li class="nav-item">
                   <a class="nav-link" href="#">TV show</a>
                 </li>
@@ -83,23 +59,14 @@
                   <a class="nav-link" href="#">TV episode</a>
                 </li>
               </ul>
-              <form class="d-flex" action="./search.html">
-                <input
-                  class="form-control me-2"
-                  type="search"
-                  placeholder="Find your movie..."
-                  aria-label="Search"
-                />
-                <button class="btn btn-light" type="submit">Search</button>
-              </form>
             </div>
           </div>
         </nav>
       </nav>
-      <div class="h1 text-center title">Movie Finder</div>
+      <div class="h1 text-center">Movie Finder</div>
       <div class="text-center">
         <img
-          src="./images/moviefinz.png"
+          src="../images/moviefinz.png"
           alt="Logo"
           width="200"
           class="rounded img-fluid"
@@ -107,11 +74,11 @@
       </div>
     </header>
     <main>
-      <h2 class="text-center">Genres</h2>
+      <h2 class="text-center"><u>Romance Movies</u></h2>
     </main>
 
     <footer>
-      <div class="text-center mt-3 mb-2" style="background-color: lightgray">
+      <div class="text-center mt-3 mb-3" style="background-color: lightgray">
         <p>
           Created with ❤️ and Enthuasiasm by
           <a href="https://github.com/mariosdaskalas" target="_blank"
@@ -123,7 +90,7 @@
           <a href="https://www.themoviedb.org/" target="_blank"
             >themoviedb.org</a
           >
-          <img src="./images/tmdb.svg" width="200" alt="Attribution logo" />
+          <img src="../images/tmdb.svg" width="200" alt="Attribution logo" />
         </p>
         <small
           >This product uses the TMDB API but is not endorsed or certified by
@@ -136,12 +103,11 @@
         >
       </div>
     </footer>
-    <script type="text/javascript" src="./config.js"></script>
-    <script type="text/javascript" src="./genre.js"></script>
-    <!-- <script type="text/javascript" src="./search.js"></script> -->
+    <script type="text/javascript" src="../config.js"></script>
+    <script type="text/javascript" src="../company.js"></script>
     <script
       type="text/javascript"
-      src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"
+      src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"
     ></script>
   </body>
 </html>

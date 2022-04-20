@@ -27,7 +27,7 @@
           style="background-color: #5d5fb9"
         >
           <div class="container-fluid">
-            <a class="navbar-brand" href="#"><u>Movie Finder</u></a>
+            <a class="navbar-brand" href="./index.html"><u>Movie Finder</u></a>
             <button
               class="navbar-toggler"
               type="button"
@@ -42,40 +42,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#"
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="./genre.html"
                     >Genre</a
                   >
                 </li>
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarScrollingDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Movies
-                  </a>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="navbarScrollingDropdown"
-                  >
-                    <li>
-                      <a class="dropdown-item" href="./popular.html">Popular</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="./top.html">Top Rated</a>
-                    </li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li>
-                      <a class="dropdown-item" href="./upcoming.html"
-                        >Upcoming</a
-                      >
-                    </li>
-                  </ul>
+                <li class="nav-item">
+                  <a class="nav-link" href="./movies.html">Movies</a>
                 </li>
-
                 <li class="nav-item">
                   <a class="nav-link" href="#">TV show</a>
                 </li>
@@ -107,7 +83,30 @@
       </div>
     </header>
     <main>
-      <h2 class="text-center">Genres</h2>
+      <h2 class="text-center"><u>Home</u></h2>
+      <div class="row m-3 justify-content-center">
+        <div class="col-sm-5 mb-4">
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search for Movies..."
+              id="myInput"
+            />
+            <div class="input-group-btn">
+              <button
+                class="btn m-1"
+                style="background-color: #5d5fb9"
+                type="submit"
+                onclick="getValue()"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+          <!-- End Form -->
+        </div>
+      </div>
     </main>
 
     <footer>
@@ -137,8 +136,7 @@
       </div>
     </footer>
     <script type="text/javascript" src="./config.js"></script>
-    <script type="text/javascript" src="./genre.js"></script>
-    <!-- <script type="text/javascript" src="./search.js"></script> -->
+    <script type="text/javascript" src="./searchMovies.js"></script>
     <script
       type="text/javascript"
       src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"
