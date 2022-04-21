@@ -1,10 +1,12 @@
 let searchText;
 let searchMovie;
+let count = 0;
+let btn = document.getElementById("clickBtn");
 const key = config.API_KEY;
 
-console.log("Hello from tv");
+console.log("Hello from search");
 
-async function gettv(url) {
+async function getsearch(url) {
   const response = await fetch(url);
   let data = await response.json();
   console.log(data.results);
@@ -19,16 +21,16 @@ async function gettv(url) {
 
     // Fetch variables data
 
-    let tvid = obj.id;
-    let tvTitle = obj.original_title;
-    let tvPoster = obj.poster_path;
-    let tvReleaseDate = obj.release_date;
-    let tvVoteAvg = obj.vote_average;
+    let searchid = obj.id;
+    let searchTitle = obj.original_title;
+    let searchPoster = obj.poster_path;
+    let searchReleaseDate = obj.release_date;
+    let searchVoteAvg = obj.vote_average;
     const pathImageUrl = "https://image.tmdb.org/t/p/original/";
-    let imgUrl = pathImageUrl + tvPoster;
+    let imgUrl = pathImageUrl + searchPoster;
     let errorImg = "../images/placeholder.jpg";
 
-    if (tvPoster == null) {
+    if (searchPoster == null) {
       imgUrl = errorImg;
     }
 
@@ -42,19 +44,19 @@ async function gettv(url) {
     class="card-header text-center"
     style="background-color: rgb(93, 95, 185)"
   >
-    ${tvTitle}
+    ${searchTitle}
   </div>
   <div class="card-body">
     <blockquote class="blockquote mb-0 text-center">
-      <p class="text-center">ID: ${tvid}</p>
+      <p class="text-center">ID: ${searchid}</p>
       <img
         src="${imgUrl}" id="imgSource"
         class="img img-fluid rounded"
        
       />
       <div class="text-center"><a href="#">Take a peak!</a></div>
-      <p class="text-center">Release Date: ${tvReleaseDate}</p>
-      <p class="text-center">Vote (Avg) : ${tvVoteAvg}</p>
+      <p class="text-center">Release Date: ${searchReleaseDate}</p>
+      <p class="text-center">Vote (Avg) : ${searchVoteAvg}</p>
     </blockquote>
   </div>
 </div>
@@ -69,6 +71,10 @@ function getValue() {
     // alert(`Inside undefined: Value: ${searchText}`);
     // alert(`Inside undefined: Value1: ${searchMovie}`);
   } else {
+    clickBtn.onclick = function () {
+      count++;
+      alert(`Count Times: ${count}`);
+    };
     // alert(`Outside undefined: Value: ${searchText}`);
     // alert(`Outside undefined: Value1: ${searchMovie}`);
     searchMovie =
@@ -76,6 +82,10 @@ function getValue() {
       key +
       "&language=en-US&query=" +
       searchText;
-    gettv(searchMovie);
+    getsearch(searchMovie);
   }
+}
+
+function reset() {
+  location.reload();
 }

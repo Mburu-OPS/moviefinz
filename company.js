@@ -1,36 +1,35 @@
 const key = config.API_KEY;
 let searchMovie;
 
-for (let k = 0; k <= 10; k++) {
-  searchMovie = `https://api.themoviedb.org/3/company/1?api_key=${key}`;
-}
-console.log("Hello from romance");
+console.log("Hello from company");
 
-async function getromance(url) {
+const main = document.querySelector("main");
+const startRow = document.createElement("div");
+startRow.classList.add("row", "m-3");
+main.appendChild(startRow);
+
+async function getcompany(url) {
   const response = await fetch(url);
   let data = await response.json();
-  console.log(data.homepage);
+  console.log(`data.headquarters: ${data.headquarters}`);
+  console.log(`data.name: ${data.name}`);
+  console.log(`data.logo_path: ${data.logo_path}`);
+  console.log(`data.homepage: ${data.homepage}`);
 
-  const main = document.querySelector("main");
-  const startRow = document.createElement("div");
-  startRow.classList.add("row", "m-3");
-  main.appendChild(startRow);
-
-  for (let i = 0; i < data.length; i++) {
-    let obj = data[i];
+  for (let i = 0; i < 1; i++) {
+    // let obj = data[i];
 
     // Fetch variables data
 
-    let romanceid = obj.id;
-    let romanceTitle = obj.original_title;
-    let romancePoster = obj.poster_path;
-    let romanceReleaseDate = obj.release_date;
-    let romanceVoteAvg = obj.vote_average;
+    let companyHead = data.headquarters;
+    let companyName = data.name;
+    let companyPoster = data.logo_path;
+    let companyURL = data.homepage;
     const pathImageUrl = "https://image.tmdb.org/t/p/original/";
-    let imgUrl = pathImageUrl + romancePoster;
+    let imgUrl = pathImageUrl + companyPoster;
     let errorImg = "../images/placeholder.jpg";
 
-    if (romancePoster == null) {
+    if (companyPoster == null) {
       imgUrl = errorImg;
     }
 
@@ -44,19 +43,17 @@ async function getromance(url) {
     class="card-header text-center"
     style="background-color: rgb(93, 95, 185)"
   >
-    ${romanceTitle}
+    ${companyName}
   </div>
   <div class="card-body">
     <blockquote class="blockquote mb-0 text-center">
-      <p class="text-center">ID: ${romanceid}</p>
+      <p class="text-center">Headquarters: ${companyHead}</p>
       <img
-        src="${imgUrl}" id="imgSource"
+        src="${imgUrl}" id="imgSourceCompany"
         class="img img-fluid rounded"
         
       />
-      <div class="text-center"><a href="#">Take a peak!</a></div>
-      <p class="text-center">Release Date: ${romanceReleaseDate}</p>
-      <p class="text-center">Vote (Avg) : ${romanceVoteAvg}</p>
+      <div class="text-center"><a href="${companyURL}" target="_blank"><span id="urlText">Take a peak!</span></a></div>
     </blockquote>
   </div>
 </div>
@@ -65,4 +62,9 @@ async function getromance(url) {
   }
 }
 
-getromance(searchMovie);
+// getcompany(searchMovie);
+for (let i = 1; i <= 20; i++) {
+  searchMovie = `https://api.themoviedb.org/3/company/${i}?api_key=${key}`;
+  // console.log(searchMovie);
+  getcompany(searchMovie);
+}
