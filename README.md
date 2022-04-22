@@ -14,7 +14,7 @@
 
 ## General Information
 
-- A movie Website made with API calls that has the following capabilities.
+> A movie Website made with API calls that has the following capabilities.
 
 - Search
 - List of Genre Movies
