@@ -32,6 +32,15 @@ async function getcompany(url) {
     if (companyPoster == null) {
       imgUrl = errorImg;
     }
+    if (data.success == false) {
+      continue;
+    }
+    if (companyName == "") {
+      continue;
+    }
+    if (companyHead == "") {
+      continue;
+    }
 
     const main = document.querySelector("main");
     const movieElement = document.createElement("div");
@@ -63,7 +72,7 @@ async function getcompany(url) {
 }
 
 // getcompany(searchMovie);
-for (let i = 1; i <= 20; i++) {
+for (let i = 1; i <= 25; i++) {
   searchMovie = `https://api.themoviedb.org/3/company/${i}?api_key=${key}`;
   // console.log(searchMovie);
   getcompany(searchMovie);

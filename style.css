@@ -5,8 +5,11 @@ body {
 small {
     font-size: 80%;
 }
-.col-sm-4:hover, .col-sm-6:hover {
+.col-sm-4:hover, .col-sm-6:hover{
     transform: scale(105%);
+}
+.col-sm-12:hover {
+    transform: scale(102%);
 }
 #imgSource {
     width: auto;
@@ -14,6 +17,10 @@ small {
 }
 #imgSourceCompany {
     width: 25rem;
+    height: auto;
+}
+#imgSourceperson {
+    width: 23rem;
     height: auto;
 }
 #imgHome {
