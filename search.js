@@ -21,11 +21,11 @@ async function getResults(url) {
   startRow.classList.add("row", "m-3");
   main.appendChild(startRow);
 
+  // Loop through all the elements
   for (let i = 0; i < data.results.length; i++) {
     let obj = data.results[i];
 
     // Fetch variables data
-
     let resultsid = obj.id;
     let resultsTitle = obj.original_title;
     let resultsPoster = obj.poster_path;
@@ -35,6 +35,7 @@ async function getResults(url) {
     let imgUrl = pathImageUrl + resultsPoster;
     let errorImg = "../images/placeholder.jpg";
 
+    // Set default image if null
     if (resultsPoster == null) {
       imgUrl = errorImg;
     }

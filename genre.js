@@ -55,6 +55,7 @@ async function getApi(url) {
   startRow.classList.add("row", "m-3");
   main.appendChild(startRow);
 
+  // Loop througb the objects API
   for (let i = 0; i < data.genres.length; i++) {
     let obj = data.genres[i];
 
@@ -74,6 +75,7 @@ async function getApi(url) {
     const movieElement = document.createElement("div");
     movieElement.classList.add("col-sm-4", "mb-4");
 
+    // Create dynamic elements with Bootstrap
     movieElement.innerHTML = `
 <div class="card">
   <div

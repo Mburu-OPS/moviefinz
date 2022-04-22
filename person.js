@@ -1,3 +1,4 @@
+// Declare variables
 const key = config.API_KEY;
 let searchMovie;
 let data;
@@ -14,10 +15,7 @@ async function getperson(url) {
   data = await response.json();
 
   for (let i = 0; i < 1; i++) {
-    // let obj = data[i];
-
     // Fetch variables data
-
     let personBirth = data.place_of_birth; // OK
     let personName = data.name; // OK
     let personPoster = data.profile_path; // OK
@@ -31,9 +29,11 @@ async function getperson(url) {
     console.log(`data.profile_path: ${personPoster}`);
     console.log(`data.popularity: ${personPopular}`);
 
+    // Set default image if null
     if (personPoster == null) {
       imgUrl = errorImg;
     }
+    // If API Call is 404
     if (data.success == false) {
       continue;
     }
@@ -67,7 +67,7 @@ async function getperson(url) {
   }
 }
 
-// getperson(searchMovie);
+// Loop through the elements
 for (let i = 1; i <= 20; i++) {
   searchMovie = `https://api.themoviedb.org/3/person/${i}?api_key=${key}`;
 

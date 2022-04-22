@@ -3,6 +3,7 @@ let searchMovie;
 
 console.log("Hello from company");
 
+// Create row element outside for loop
 const main = document.querySelector("main");
 const startRow = document.createElement("div");
 startRow.classList.add("row", "m-3");
@@ -17,8 +18,6 @@ async function getcompany(url) {
   console.log(`data.homepage: ${data.homepage}`);
 
   for (let i = 0; i < 1; i++) {
-    // let obj = data[i];
-
     // Fetch variables data
 
     let companyHead = data.headquarters;
@@ -29,12 +28,16 @@ async function getcompany(url) {
     let imgUrl = pathImageUrl + companyPoster;
     let errorImg = "../images/placeholder.jpg";
 
+    // Set default image if null
     if (companyPoster == null) {
       imgUrl = errorImg;
     }
+
+    // If 404 POST error
     if (data.success == false) {
       continue;
     }
+    // Do not execute if is empty
     if (companyName == "") {
       continue;
     }
@@ -46,6 +49,7 @@ async function getcompany(url) {
     const movieElement = document.createElement("div");
     movieElement.classList.add("col-sm-4", "mb-3");
 
+    // Add elements dynamic with Bootstrap
     movieElement.innerHTML = `
 <div class="card">
   <div
@@ -71,7 +75,7 @@ async function getcompany(url) {
   }
 }
 
-// getcompany(searchMovie);
+// Loop through the elements
 for (let i = 1; i <= 25; i++) {
   searchMovie = `https://api.themoviedb.org/3/company/${i}?api_key=${key}`;
   // console.log(searchMovie);

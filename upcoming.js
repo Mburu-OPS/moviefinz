@@ -17,11 +17,11 @@ async function getupcoming(url) {
   startRow.classList.add("row", "m-3");
   main.appendChild(startRow);
 
+  // Loop through the elements
   for (let i = 0; i < data.results.length; i++) {
     let obj = data.results[i];
 
     // Fetch variables data
-
     let upcomingid = obj.id;
     let upcomingTitle = obj.original_title;
     let upcomingPoster = obj.poster_path;
@@ -31,6 +31,7 @@ async function getupcoming(url) {
     let imgUrl = pathImageUrl + upcomingPoster;
     let errorImg = "../images/placeholder.jpg";
 
+    // Set default image if null
     if (upcomingPoster == null) {
       imgUrl = errorImg;
     }

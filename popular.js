@@ -17,11 +17,11 @@ async function getpopular(url) {
   startRow.classList.add("row", "m-3");
   main.appendChild(startRow);
 
+  // Loop through all the elements
   for (let i = 0; i < data.results.length; i++) {
     let obj = data.results[i];
 
     // Fetch variables data
-
     let popularid = obj.id;
     let popularTitle = obj.original_title;
     let popularPoster = obj.poster_path;
@@ -31,6 +31,7 @@ async function getpopular(url) {
     let imgUrl = pathImageUrl + popularPoster;
     let errorImg = "../images/placeholder.jpg";
 
+    // Set default image if null
     if (popularPoster == null) {
       imgUrl = errorImg;
     }

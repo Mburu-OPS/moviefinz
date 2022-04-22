@@ -1,3 +1,4 @@
+// Declare variables
 let searchText;
 let searchMovie;
 let count = 0;
@@ -16,11 +17,11 @@ async function getsearch(url) {
   startRow.classList.add("row", "m-3");
   main.appendChild(startRow);
 
+  // Loop through the elements
   for (let i = 0; i < data.results.length; i++) {
     let obj = data.results[i];
 
     // Fetch variables data
-
     let searchid = obj.id;
     let searchTitle = obj.original_title;
     let searchPoster = obj.poster_path;
@@ -30,6 +31,7 @@ async function getsearch(url) {
     let imgUrl = pathImageUrl + searchPoster;
     let errorImg = "../images/placeholder.jpg";
 
+    // Set default image if null
     if (searchPoster == null) {
       imgUrl = errorImg;
     }
@@ -68,15 +70,12 @@ async function getsearch(url) {
 function getValue() {
   searchText = document.getElementById("myInput").value;
   if (searchText == undefined) {
-    // alert(`Inside undefined: Value: ${searchText}`);
-    // alert(`Inside undefined: Value1: ${searchMovie}`);
   } else {
     clickBtn.onclick = function () {
       count++;
       alert(`Count Times: ${count}`);
     };
-    // alert(`Outside undefined: Value: ${searchText}`);
-    // alert(`Outside undefined: Value1: ${searchMovie}`);
+
     searchMovie =
       "https://api.themoviedb.org/3/search/movie?api_key=" +
       key +
@@ -86,6 +85,7 @@ function getValue() {
   }
 }
 
+// Resets the page
 function reset() {
   location.reload();
 }

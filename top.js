@@ -17,11 +17,11 @@ async function gettop_rated(url) {
   startRow.classList.add("row", "m-3");
   main.appendChild(startRow);
 
+  // Loop through the elements
   for (let i = 0; i < data.results.length; i++) {
     let obj = data.results[i];
 
     // Fetch variables data
-
     let top_ratedid = obj.id;
     let top_ratedTitle = obj.original_title;
     let top_ratedPoster = obj.poster_path;
@@ -31,6 +31,7 @@ async function gettop_rated(url) {
     let imgUrl = pathImageUrl + top_ratedPoster;
     let errorImg = "../images/placeholder.jpg";
 
+    // Set default image if null
     if (top_ratedPoster == null) {
       imgUrl = errorImg;
     }
