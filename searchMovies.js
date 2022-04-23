@@ -71,10 +71,12 @@ function getValue() {
   searchText = document.getElementById("myInput").value;
   if (searchText == undefined) {
   } else {
+    /*
     clickBtn.onclick = function () {
       count++;
       alert(`Count Times: ${count}`);
     };
+    */
 
     searchMovie =
       "https://api.themoviedb.org/3/search/movie?api_key=" +
