@@ -22,7 +22,7 @@ async function getperson(url) {
     let personPopular = data.popularity; // OK
     const pathImageUrl = "https://image.tmdb.org/t/p/original/";
     let imgUrl = pathImageUrl + personPoster;
-    let errorImg = "../images/placeholder.jpg";
+    let errorImg = "./images/placeholder.jpg";
 
     console.log(`data.place_of_birth: ${personBirth}`);
     console.log(`data.name: ${personName}`);

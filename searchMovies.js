@@ -29,7 +29,7 @@ async function getsearch(url) {
     let searchVoteAvg = obj.vote_average;
     const pathImageUrl = "https://image.tmdb.org/t/p/original/";
     let imgUrl = pathImageUrl + searchPoster;
-    let errorImg = "../images/placeholder.jpg";
+    let errorImg = "./images/placeholder.jpg";
 
     // Set default image if null
     if (searchPoster == null) {

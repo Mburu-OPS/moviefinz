@@ -26,7 +26,7 @@ async function getcompany(url) {
     let companyURL = data.homepage;
     const pathImageUrl = "https://image.tmdb.org/t/p/original/";
     let imgUrl = pathImageUrl + companyPoster;
-    let errorImg = "../images/placeholder.jpg";
+    let errorImg = "./images/placeholder.jpg";
 
     // Set default image if null
     if (companyPoster == null) {

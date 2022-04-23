@@ -29,7 +29,7 @@ async function getupcoming(url) {
     let upcomingVoteAvg = obj.vote_average;
     const pathImageUrl = "https://image.tmdb.org/t/p/original/";
     let imgUrl = pathImageUrl + upcomingPoster;
-    let errorImg = "../images/placeholder.jpg";
+    let errorImg = "./images/placeholder.jpg";
 
     // Set default image if null
     if (upcomingPoster == null) {

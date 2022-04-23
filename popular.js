@@ -29,7 +29,7 @@ async function getpopular(url) {
     let popularVoteAvg = obj.vote_average;
     const pathImageUrl = "https://image.tmdb.org/t/p/original/";
     let imgUrl = pathImageUrl + popularPoster;
-    let errorImg = "../images/placeholder.jpg";
+    let errorImg = "./images/placeholder.jpg";
 
     // Set default image if null
     if (popularPoster == null) {

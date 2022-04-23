@@ -29,7 +29,7 @@ async function gettop_rated(url) {
     let top_ratedVoteAvg = obj.vote_average;
     const pathImageUrl = "https://image.tmdb.org/t/p/original/";
     let imgUrl = pathImageUrl + top_ratedPoster;
-    let errorImg = "../images/placeholder.jpg";
+    let errorImg = "./images/placeholder.jpg";
 
     // Set default image if null
     if (top_ratedPoster == null) {
