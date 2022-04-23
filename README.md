@@ -34,7 +34,7 @@
 
 ## Screenshots
 
-![Home](https://mariosdaskalas.gr/moviefinz/scrot/scrot1.png)
+![Home](https://mariosdaskalas.gr/moviefinz/scrot/home.png)
 
 ## Project Status
 
